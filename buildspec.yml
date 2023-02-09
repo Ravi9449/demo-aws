@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Entered the pre-build phase"
+
+  build:
+    commands:
+      - echo "Entered Build Phase"
+      - mvn clean package
+
+artifacts:
+  files:
+    - target/*
+  discard-paths: yes
+
+cache:
+  paths:
+    - "/root/.m2/**/*"
